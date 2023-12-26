@@ -42,8 +42,8 @@ app.post("/video", async (req, res) => {
     .then(() => {
       // Sort image files by name
       imageFiles.sort((a, b) => {
-        const aNumber = parseInt(a.replace("image", ""));
-        const bNumber = parseInt(b.replace("image", ""));
+        const aNumber = parseInt(a.replace("/tmp/image", ""));
+        const bNumber = parseInt(b.replace("/tmp/image", ""));
         return aNumber - bNumber;
       });
     })
