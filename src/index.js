@@ -24,12 +24,12 @@ app.post("/video", async (req, res) => {
   }
 
   const timeStart = new Date().getTime();
-  const outputFileName = "output.mp4";
+  const outputFileName = "/tmp/output.mp4";
   const imageFiles = [];
 
   // Download images
   let downloadPromises = imageUrls.map((url, i) => {
-    const fileName = `image${i}`;
+    const fileName = `/tmp/image${i}`;
     return downloadImage(url, fileName)
       .then(() => imageFiles.push(fileName))
       .catch((error) => {
